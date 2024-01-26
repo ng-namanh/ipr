@@ -2,7 +2,7 @@ from PIL import ImageFilter, Image, ImageEnhance
 import matplotlib.pyplot as plt
 
 # Load the image.jpg file
-image = Image.open('image.jpg')
+image = Image.open('week1\image.jpg')
 
 # Display the image
 def load_and_display_image(image):    
@@ -49,7 +49,7 @@ def apply_sharpen_filter(image):
     sharpened_image = image.filter(ImageFilter.SHARPEN)
     sharpened_image.show()
 
-load_and_display_image(image)
+# load_and_display_image(image)
 convert_to_grayscale(image)
 resize_image(image, 800, 600)
 crop_image(image, 100, 100, 400, 400)  
