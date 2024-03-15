@@ -1,3 +1,6 @@
+
+## Before running, ensure the image is in the same directory as this script.
+
 import cv2
 from tkinter import Tk, Label, Entry, Button, Scale
 
@@ -17,6 +20,9 @@ def analyze_image():
 
 def process_image(image_path, new_width, new_height, threshold):
   img = cv2.imread(image_path)
+
+  if img is None:
+    raise FileNotFoundError(f"Could not open or find the image: {image_path}")
 
   if len(img.shape) > 2:
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
